@@ -32,7 +32,7 @@ laurea (286)
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
 
-6.
+6. SELECT * FROM `degrees` WHERE `level` = 'magistrale';
 
 -------------------------->
 
