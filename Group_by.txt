@@ -6,7 +6,7 @@
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-2. 
+2. SELECT COUNT(`id`) as `n_teachers`, `office_address` FROM `teachers` GROUP BY `office_address`;
 
 -------------------------->
 
