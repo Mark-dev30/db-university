@@ -26,15 +26,19 @@ WHERE `teachers`.`name` LIKE "Fulvio" AND `teachers`.`surname` LIKE "Amato";
    in ordine alfabetico per cognome e nome
 
 4. SELECT `students`.`name`, `students`.`surname`,`degrees`.`name` as `name_dregrees`, `departments`.`name` as `name_department` 
-FROM `students` JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` 
-JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` 
-ORDER BY `students`.`name`,`students`.`surname` ASC;
+   FROM `students` JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` 
+   JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` 
+   ORDER BY `students`.`name`,`students`.`surname` ASC;
 
 -------------------------->
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
-5.
+5. SELECT `degrees`.`name` AS `name_degrees`, `courses`.`name` AS `name_course` , 
+   `teachers`.`name` AS `name_teacher`, `teachers`.`surname` AS `surname_teacher` 
+   FROM `degrees` JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id` 
+   JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` 
+   JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`;
 
 -------------------------->
 
